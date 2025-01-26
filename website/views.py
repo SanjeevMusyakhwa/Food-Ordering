@@ -17,3 +17,11 @@ def HomeView(request):
         foods = foods.filter(food_type=food_type)
     
     return render(request, 'index.html', {'foods': foods, 'categories': categories})
+  
+def CategoryList(request):
+  categories = CategoryModel.objects.all()
+  return render(request, 'categories.html', {'categories': categories})
+
+def FoodsList(request):
+    foods = FoodsModel.objects.all()
+    return render(request, 'allfoods.html', {'foods': foods})

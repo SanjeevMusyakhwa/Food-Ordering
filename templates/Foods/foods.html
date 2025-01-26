@@ -1,0 +1,37 @@
+<!-- fOOD MEnu Section Starts Here -->
+<section class="food-menu">
+  <div class="container">
+    <h2 class="text-center">Food Menu</h2>
+    {% for food in foods %}
+
+    <div class="food-menu-box">
+      <div class="food-menu-img">
+        <img
+          src="{{ food.images.url }}"
+          alt="{{ food.title }}"
+          class="img-responsive img-curve"
+        />
+      </div>
+
+      <div class="food-menu-desc">
+        <h4>{{ food.title }}</h4>
+        <p class="food-type">@{{ food.food_type }}</p>
+        <!-- Display the food type -->
+        <p class="food-price">Rs {{ food.price }}</p>
+        <p class="food-detail">{{ food.description }}</p>
+        <br />
+
+        <a href="order.html" class="btn btn-primary">Order Now</a>
+      </div>
+    </div>
+
+    {% endfor %}
+
+    <div class="clearfix"></div>
+  </div>
+
+  <p class="text-center">
+    <a href="{% url 'food' %}">See All Foods</a>
+  </p>
+</section>
+<!-- fOOD Menu Section Ends Here -->
