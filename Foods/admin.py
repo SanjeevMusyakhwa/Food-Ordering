@@ -7,4 +7,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(FoodsModel)
 class FoodsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'price', 'category', 'rating')
+    list_display = ('title', 'price', 'food_type','category', 'rating')

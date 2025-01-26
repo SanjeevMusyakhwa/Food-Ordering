@@ -18,7 +18,7 @@
         <div class="container">
             <div class="logo">
                 <a href="#" title="Logo">
-                    <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
+                    InnSync
                 </a>
             </div>
 
@@ -47,12 +47,10 @@
     <!-- fOOD sEARCH Section Starts Here -->
     <section class="food-search text-center">
         <div class="container">
-            
-            <form action="food-search.html" method="POST">
+            <form action="{% url 'home' %}" method="GET">
                 <input type="search" name="search" placeholder="Search for Food.." required>
                 <input type="submit" name="submit" value="Search" class="btn btn-primary">
             </form>
-
         </div>
     </section>
     <!-- fOOD sEARCH Section Ends Here -->
@@ -89,18 +87,20 @@
                 <div class="food-menu-img">
                     <img src="{{ food.images.url }}" alt="{{ food.title }}" class="img-responsive img-curve">
                 </div>
-
+            
                 <div class="food-menu-desc">
                     <h4>{{ food.title }}</h4>
+                    <p class="food-type"> @{{ food.food_type }}</p>  <!-- Display the food type -->
                     <p class="food-price">Rs {{ food.price }}</p>
                     <p class="food-detail">
                         {{ food.description }}
                     </p>
                     <br>
-
+            
                     <a href="order.html" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
+            
             {% endfor %}
            
 
@@ -137,7 +137,7 @@
     <!-- footer Section Starts Here -->
     <section class="footer">
         <div class="container text-center">
-            <p>All rights reserved. Designed By <a href="#">Vijay Thapa</a></p>
+            <p>All rights reserved || InnSync</p>
         </div>
     </section>
     <!-- footer Section Ends Here -->

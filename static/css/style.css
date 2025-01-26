@@ -41,7 +41,7 @@
 }
 
 a{
-    color: #ff6b81;
+    color: #2f3542;
     text-decoration: none;
 }
 a:hover{
@@ -93,9 +93,7 @@ fieldset{
     width: 10%;
     float: left;
 }
-.menu{
-    line-height: 60px;
-}
+
 .menu ul{
     list-style-type: none;
 }

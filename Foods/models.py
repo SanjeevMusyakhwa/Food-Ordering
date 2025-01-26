@@ -10,6 +10,13 @@ class CategoryModel(models.Model):
         return self.name
 
 
+FOOD_TYPES = [
+        ('Buff', 'Buff'),
+        ('Chicken', 'Chicken'),
+        ('Veg', 'Veg'),
+        ('None', 'None')
+    ]
+
 class FoodsModel(models.Model):
     title = models.CharField(max_length=255, verbose_name='Food Title')
     price = models.PositiveBigIntegerField(default=0)
@@ -18,6 +25,7 @@ class FoodsModel(models.Model):
     rating = models.FloatField(default=0.0, verbose_name='Rating')  # A field to store the rating (e.g., 0.0 to 5.0)
     review = models.TextField(blank=True, verbose_name='Review')    # A field to store the review text
     category = models.ForeignKey(CategoryModel, on_delete=models.CASCADE, related_name='foods')
+    food_type = models.CharField(max_length=50, choices=FOOD_TYPES, default='None')
 
     def __str__(self):
         return self.title
